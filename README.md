@@ -44,27 +44,27 @@ importDir(
 
 ## Docs
 
-`importDir(mallet, dataDir, opts)`
+`importDir(mallet, dataDir, options)`
 
 Returns a promise which resolves when data is successfully imported to MALLET format.  The resolve value is an object with a property `malletDataFile` which points to the newly created `.mallet` file.
 
 * `mallet` - path to executable e.g. `~/Downloads/mallet-2.0.8/bin/mallet`
 * `dataDir` - path to directory of text files to classify (one file per document)
-* `opts`
+* `options`
   * `malletDataFile` - filepath to write data in MALLET format (default `./${Date.now()}_data.mallet`)
-  * `stopFile` - optional filepath containing newline-separated stopwords to omit from classification
+  * `stopFile` - path to file containing newline-separated stopwords to omit from classification
 
 
-`trainTopics(mallet, malletDataFile, opts)`
+`trainTopics(mallet, malletDataFile, options)`
 
 Returns a promise which resolves when topics are successfully generated.  The resolve value is an object with properties `topicKeysFile` and `docTopicsFile` which contain the generated topics and document topic scores respectively.
 
 * `mallet` - path to executable e.g. `~/Downloads/mallet-2.0.8/bin/mallet`
 * `malletDataFile` - filepath to data file created by `importDir`
-* `opts`
+* `options`
   * `numTopics` - number of topics to generate (default `10`)
   * `numIterations` - number of sampling iterations (default `100`)
-  * `optimizeInterval` - number of iterations between hyperparameter optimizations (default `undefined` - no optimization)
-  * `optimizeBurnIn` - number of iterations before hyperparameter optimization begins (default `2*optimizeInterval`)
   * `topicKeysFile` - filepath to write topics in tab-separated format (default `./${Date.now()}_topics.tsv`)
   * `docTopicsFile` - filepath to write topic scores for each document in tab-separated format (default `./${Date.now()}_doc_topics.tsv`)
+  * `optimizeInterval` - number of iterations between hyperparameter optimizations (default `undefined`)
+  * `optimizeBurnIn` - number of iterations before hyperparameter optimization begins (default `2*optimizeInterval`)

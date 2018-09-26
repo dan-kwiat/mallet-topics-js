@@ -4,7 +4,7 @@
   "description": "A javascript wrapper for the MALLET command line tool for topic modelling.",
   "main": "./build/index.js",
   "scripts": {
-    "build": "babel src --out-dir build",
+    "build": "rm -rf build && babel src --out-dir build",
     "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

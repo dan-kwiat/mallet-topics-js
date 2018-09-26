@@ -1,4 +1,4 @@
-# mallet-topics-js
+# Mallet Topics
 
 A javascript wrapper for the [MALLET](http://mallet.cs.umass.edu/) command line tool for topic modelling. Really? Yeah.
 
@@ -44,7 +44,7 @@ importDir(
 
 ## Docs
 
-`importDir(mallet, dataDir, options)`
+#### `importDir(mallet, dataDir, options)`
 
 Returns a promise which resolves when data is successfully imported to MALLET format.  The resolve value is an object with a property `malletDataFile` which points to the newly created `.mallet` file.
 
@@ -55,7 +55,7 @@ Returns a promise which resolves when data is successfully imported to MALLET fo
   * `stopFile` - path to file containing newline-separated stopwords to omit from classification
 
 
-`trainTopics(mallet, malletDataFile, options)`
+#### `trainTopics(mallet, malletDataFile, options)`
 
 Returns a promise which resolves when topics are successfully generated.  The resolve value is an object with properties `topicKeysFile` and `docTopicsFile` which contain the generated topics and document topic scores respectively.
 

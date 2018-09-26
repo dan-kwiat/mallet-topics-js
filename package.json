@@ -1,0 +1,37 @@
+{
+  "name": "mallet-topics",
+  "version": "1.0.0",
+  "description": "A javascript wrapper for the MALLET command line tool for topic modelling.",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "babel src --out-dir build",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dan-kwiat/mallet-topics-js.git"
+  },
+  "keywords": [
+    "topic",
+    "modeling",
+    "modelling",
+    "nlp",
+    "classification",
+    "mallet"
+  ],
+  "author": "Dan Kwiatkowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dan-kwiat/mallet-topics-js/issues"
+  },
+  "homepage": "https://github.com/dan-kwiat/mallet-topics-js#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  }
+}

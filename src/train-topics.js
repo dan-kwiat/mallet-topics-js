@@ -1,4 +1,4 @@
-const execPromise = require('exec-promise')
+const execPromise = require('./exec-promise')
 
 const defaultFilePrefix = `./${Date.now()}`
 

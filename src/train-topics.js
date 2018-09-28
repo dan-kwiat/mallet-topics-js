@@ -9,6 +9,7 @@ const defaultTrainOpts = {
   optimizeBurnIn: undefined,
   topicKeysFile: `${defaultFilePrefix}_topics.tsv`,
   docTopicsFile: `${defaultFilePrefix}_doc_topics.tsv`,
+  outputState: `${defaultFilePrefix}_topic_state.gz`,
   onStdData: (stdType, msg) => console.log(msg.toString()),
 }
 
@@ -23,6 +24,7 @@ const trainTopics = (mallet, malletDataFile, opts) => {
     ...(options.optimizeBurnIn === undefined ? [] : [ '--optimize-burn-in', options.optimizeBurnIn ]),
     ...(options.topicKeysFile === undefined ? [] : [ '--output-topic-keys', options.topicKeysFile ]),
     ...(options.docTopicsFile === undefined ? [] : [ '--output-doc-topics', options.docTopicsFile ]),
+    ...(options.outputState === undefined ? [] : [ '--output-state', options.outputState ]),
   ]
   return spawnPromise(options.onStdData)(
     mallet,
